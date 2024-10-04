@@ -103,7 +103,7 @@ This data shows it is moderate positive correlation = to 0.64 , between simulate
 summary.lm(model.2)
 ```
   
-  Model 1 shows that the intercept -4.81 and coefficient 0.05 of arm are both of these are both significantly different from zero. 
+  Model 1 shows that the intercept -4.81 and coefficient 0.45 of arm are both of these are both significantly different from zero. 
 
 #### predict model.2 at target point
 
@@ -132,7 +132,7 @@ Both arm and Grip are significantly diffrent from 0 because they are both less t
 ```{r}
 cor(data)
 ```
-Wha this shows is that sims corilates with grip ad arm values. 
+What this shows is that sims corilates with grip ad arm values. 
 `
   
 ### Inferential  (Build 2-dimentional model.3)
