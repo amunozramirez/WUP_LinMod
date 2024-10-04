@@ -76,6 +76,14 @@ At Arm=88, Grip=94, the predicted SIMS score is 0.71. 95% confidence interval fo
 
 ## Model 2 SIM~GRIP
 
+```{r}
+plot(SIMS~GRIP,data=data)
+model.2 =lm(SIMS~GRIP, data=data)
+abline(model.2)
+```
+
+This scatter plot shows simulated strength increases depending on the amount of grip exerted by an individual. 
+
 ### Now add in scatterplot
 
 
