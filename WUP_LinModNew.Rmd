@@ -59,7 +59,7 @@ This data shows it is moderate positive correlation, between simulated strength 
 summary.lm(model.1)
 ```
 
-Model 1 shows that the intercept and coefficient of arm are both of these are both significantly diffrent from zero. 
+Model 1 shows that the intercept -4.095 and coefficient 0.055 of arm are both of these are both significantly different from zero. 
 
 #### Predict at target point
 
@@ -90,8 +90,18 @@ This scatter plot shows simulated strength increases depending on the amount of 
 ### Numerical results 
 
 
+```{r}
+cor(SIMS~GRIP,data=data)
+```
+This data shows it is moderate positive correlation = to 0.64 , between simulated strength and grip strength. 
+
 ### Inferential  (Build model.2)
+
+```{r}
+summary.lm(model.2)
+```
   
+  Model 1 shows that the intercept -4.81 and coefficient 0.05 of arm are both of these are both significantly different from zero. 
 
 #### predict model.2 at target point
 
