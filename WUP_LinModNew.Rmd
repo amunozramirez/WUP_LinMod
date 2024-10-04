@@ -58,8 +58,18 @@ This data shows it is moderate positive correlation, between simulated strength 
 ```{r}
 summary.lm(model.1)
 ```
+
+Model 1 shows that the intercept and coefficient of arm are both of these are both significantly diffrent from zero. 
+
 #### Predict at target point
 
+```{r}
+targtPoint = data.frame(GRIP=94, ARM=88)
+predictInt = predict(model.1, targtPoint, interval = "prediction")
+print(predictInt)
+```
+
+At Arm=88, Grip=94, the predicted SIMS score is 0.71. 95% confidence interval for that score is SIMS between -1.73 and 3.14.  
 
 #### scatterplot with model fit
   
