@@ -34,18 +34,17 @@ data <- read.csv(file="https://onlinestatbook.com/case_studies_rvls/physical_str
 ## Model 1 SIM~ARMS
 
 ### scatterplot
-
 ```{r}
 plot(SIMS~ARM,data=data)
-model1=1m(SIMS~ARM, data=data)
-abline(model1)
+model.1 =lm(SIMS~ARM, data=data)
+abline(model.1)
 ```
 
-This scatter plot shows simulated strength increases 
 
-```{r}
-plot(SIMS~ARM,data=data)
-```
+
+This scatter plot shows simulated strength increases depending on the amount of arm strength exerted by an individual. 
+
+
 ### Numerical results
 
 ```{r}
@@ -56,8 +55,9 @@ This data shows it is moderate positive correlation, between simulated strength 
 
 ### Inferential  (Build model.1)
 
-
-
+```{r}
+summary.lm(model.1)
+```
 #### Predict at target point
 
 
