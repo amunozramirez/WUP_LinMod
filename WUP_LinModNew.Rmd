@@ -87,6 +87,8 @@ This scatter plot shows simulated strength increases depending on the amount of 
 ### Now add in scatterplot
 
 
+
+
 ### Numerical results 
 
 
@@ -105,19 +107,42 @@ summary.lm(model.2)
 
 #### predict model.2 at target point
 
+```{r}
+targtPoint = data.frame(GRIP=94, ARM=88)
+predictInt = predict(model.2, targtPoint, interval = "prediction")
+print(predictInt)
+```
+At Arm=88, Grip=94, the predicted SIMS score is -0.54. 95% confidence inveral for that score is sims between -3.11 and 2.04. 
+
 #### now add the model fit to our plot for model.2
   
 
 
 ## Model 3 SIM~ARM+GRIP
 
+```{r}
+model.3 = lm(SIMS~ARM+GRIP , data=data)
+summary(model.3)
+```
+
+Both arm and Grip are significantly diffrent from 0 because they are both less than 0.5 
+
 ### Numerical results (cor)
 
+```{r}
+cor(data)
+```
+Wha this shows is that sims corilates with grip ad arm values. 
 `
   
 ### Inferential  (Build 2-dimentional model.3)
 
 #### predict model.3 at target point
+
+```{r}
+predict(model.3, targtPoint,interval='prediction')
+```
+This shows that arm=88, grip= 94, the predictive sims score is 0.15. At that score the 95% confidence interval is sims between -2.13 ans 2.43. 
   
 
 ## Comparing nested models ANOVA Test
@@ -126,4 +151,16 @@ summary.lm(model.2)
 ### Model.2 vs Model.3
 
 ## Informally compare Model.1 with model.2
+
+```{r}
+anova_result <- anova(model.1, model.3)
+print(anova_result)
+```
+Model 2 is bettter than model 1 because the p value for comparison is less than 0.05. 
+
+```{r}
+anova_result <- anova(model.2, model.3)
+print(anova_result)
+```
+
 
