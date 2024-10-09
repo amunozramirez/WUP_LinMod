@@ -162,5 +162,5 @@ Model 2 is bettter than model 1 because the p value for comparison is less than 
 anova_result <- anova(model.2, model.3)
 print(anova_result)
 ```
-
+The p value is less than 0.05 proving that the modles are different. Model 3 is better than model 2 because the comparison is better. 
 
